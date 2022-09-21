@@ -63,6 +63,25 @@ app.post('/restaurent/:id',async(req,res,next)=>
 
 })
 
+app.get('/admin',async(req,res,next)=>{
+
+    let restaurents=await Restaurent.findAll();
+    let data=[];
+
+    for(let i=0;i<restaurents.length;i++)
+    {
+        let obj={};
+        let reviews= await restaurents[i].getReviews();
+        obj['id']=`${restaurents[i].id}`
+        obj['Restaurant Name']=`${restaurents[i].name}`;
+        obj['Total Reviews']=`${reviews.length}`;
+        data.push(obj);
+
+    }
+    res.json({data});
+
+})
+
 Restaurent.hasMany(Review)
 Review.belongsTo(Restaurent);
 
