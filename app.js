@@ -35,7 +35,7 @@ app.post('/user/signup',async(req,res,next)=>{
     }
     res.json({msg:"Sign up Successfull"});
 
-    
+ //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   
  
 })
 //user login
